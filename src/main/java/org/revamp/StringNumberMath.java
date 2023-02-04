@@ -83,4 +83,37 @@ public class StringNumberMath {
         }
         return Character.MIN_VALUE;
     }
+
+    /**
+     * Write a function that reverses the words of a given string.
+     * This function uses internal {@link StringBuilder#reverse()}.
+     *
+     * @param str {@link String} input
+     * @return {@link String}
+     */
+    public String reverseLettersAndWordsAuto(String str) {
+        return new StringBuilder(str).reverse().toString();
+    }
+
+    /**
+     * Write a function that reverses the words of a given string.
+     *
+     * @param str {@link String} input
+     * @return {@link String}
+     */
+    public String reverseLettersAndWordsManual(String str) {
+        StringBuilder result = new StringBuilder();
+        String[] strSplit = str.split(" ");
+
+        // reverse order of words while reversing letters of each words
+        for (int i = strSplit.length - 1; i >= 0; i--) {
+            String currentWord = strSplit[i];
+            StringBuilder wordReversed = new StringBuilder();
+            for (int j = currentWord.length() - 1; j >= 0; j--) {
+                wordReversed.append(currentWord.charAt(j));
+            }
+            result.append(wordReversed).append(" ");
+        }
+        return result.toString().trim();
+    }
 }
