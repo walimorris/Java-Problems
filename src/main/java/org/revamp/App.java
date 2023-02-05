@@ -10,6 +10,9 @@ public class App {
         String repeating = "ggggggt";
         String random = "ee";
         String single = "e";
+        String empty = "";
+        String digitString = "1234567898712";
+        String digitString2 = "123245hg12334";
         String sentence = "My mother told me someday I will buy galleys with good oars, sail to distant shores.";
 
         int duplicateCharactersInGreeting = stringNumberMath.countDuplicateCharacters(greeting);
@@ -24,5 +27,9 @@ public class App {
         System.out.println(sentence);
         System.out.println(stringNumberMath.reverseLettersAndWordsAuto(sentence));
         System.out.println(stringNumberMath.reverseLettersAndWordsManual(sentence));
+
+        System.out.printf("'%s' strictly contains digits: %s%n", digitString, stringNumberMath.strictlyContainsDigits(digitString));
+        System.out.printf("'%s' strictly contains digits: %s%n", digitString2, stringNumberMath.strictlyContainsDigits(digitString2));
+        System.out.printf("'%s' strictly contains digits: %s%n", empty, stringNumberMath.strictlyContainsDigits(empty));
     }
 }

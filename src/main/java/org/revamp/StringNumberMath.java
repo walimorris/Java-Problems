@@ -116,4 +116,24 @@ public class StringNumberMath {
         }
         return result.toString().trim();
     }
+
+    /**
+     * Write a program that checks whether the given string contains only digits.
+     *
+     * @param str {@link String} input
+     * @return boolean
+     *
+     * @throws IOException string length must be > 0
+     */
+    public boolean strictlyContainsDigits(String str) throws IOException {
+        if (str.length() < 1) {
+            throw new IOException("Input string must be greater than length 0");
+        }
+        for (char ch : str.toCharArray()) {
+            if (!(Character.isDigit(ch))) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
