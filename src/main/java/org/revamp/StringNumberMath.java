@@ -1,9 +1,9 @@
 package org.revamp;
 
+import jdk.internal.util.xml.impl.Pair;
+
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class StringNumberMath {
 
@@ -135,5 +135,32 @@ public class StringNumberMath {
             }
         }
         return true;
+    }
+
+    /**
+     * Write a program that counts the number of vowels and consonants in a given string.
+     * Note: we use the English language.
+     *
+     * @param str {@link String} input
+     *
+     * @return {@link Map}
+     */
+    public Map<String, Integer> countVowelsAndConsonants(String str) {
+        Map<String, Integer> vowelsAndConsonantsMap = new HashMap<>();
+        List<Character> vowels = Arrays.asList('a', 'e', 'i', 'o', 'u');
+
+        int vowelCount = 0;
+        int consonantCount = 0;
+
+        for (char ch : str.toCharArray()) {
+            if (vowels.contains(ch)) {
+                vowelCount++;
+            } else if (ch >= 'a' && ch <= 'z') {
+                consonantCount++;
+            }
+        }
+        vowelsAndConsonantsMap.put("vowels", vowelCount);
+        vowelsAndConsonantsMap.put("consonants", consonantCount);
+        return vowelsAndConsonantsMap;
     }
 }

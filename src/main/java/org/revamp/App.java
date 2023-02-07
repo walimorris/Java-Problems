@@ -1,6 +1,7 @@
 package org.revamp;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class App {
     public static void main( String[] args ) throws IOException {
@@ -30,6 +31,9 @@ public class App {
 
         System.out.printf("'%s' strictly contains digits: %s%n", digitString, stringNumberMath.strictlyContainsDigits(digitString));
         System.out.printf("'%s' strictly contains digits: %s%n", digitString2, stringNumberMath.strictlyContainsDigits(digitString2));
-        System.out.printf("'%s' strictly contains digits: %s%n", empty, stringNumberMath.strictlyContainsDigits(empty));
+//        System.out.printf("'%s' strictly contains digits: %s%n", empty, stringNumberMath.strictlyContainsDigits(empty));
+
+        Map<String, Integer> vowelsAndConsonants = stringNumberMath.countVowelsAndConsonants(greeting);
+        System.out.println(vowelsAndConsonants);
     }
 }
