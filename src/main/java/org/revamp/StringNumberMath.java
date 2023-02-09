@@ -163,4 +163,35 @@ public class StringNumberMath {
         vowelsAndConsonantsMap.put("consonants", consonantCount);
         return vowelsAndConsonantsMap;
     }
+
+    /**
+     * Write a program that counts the occurrences of a certain character in a given string.
+     *
+     * @param str {@link String} string input
+     * @param c character to find
+     *
+     * @return int
+     */
+    public int countCharacter(String str, char c) {
+        int characterCount = 0;
+        for (char ch : str.toCharArray()) {
+            if (ch == c) {
+                characterCount++;
+            }
+        }
+        return characterCount;
+    }
+
+    /**
+     * Write a program that counts the occurrences of a certain character in a given string.
+     * v2
+     *
+     * @param str {@link String} string input
+     * @param c character to find
+     *
+     * @return int
+     */
+    public int countCharacterV2(String str, char c) {
+        return str.length() - str.replace(String.valueOf(c), "").length();
+    }
 }

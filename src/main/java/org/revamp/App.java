@@ -35,5 +35,8 @@ public class App {
 
         Map<String, Integer> vowelsAndConsonants = stringNumberMath.countVowelsAndConsonants(greeting);
         System.out.println(vowelsAndConsonants);
+        int characterCount1 = stringNumberMath.countCharacter(sentence, 'a');
+        int characterCount2 = stringNumberMath.countCharacterV2(sentence, 'a');
+        System.out.printf("character count for '%s' = %d, (v2 = %d)%n", sentence, characterCount1, characterCount2);
     }
 }
