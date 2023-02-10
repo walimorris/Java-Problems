@@ -250,18 +250,53 @@ public class StringNumberMath {
         }
     }
 
+    /**
+     * Write a function that removes all white space from a string.
+     *
+     * @param str {@link String} input string
+     *
+     * @return {@link String}
+     */
+    public String removeWhiteSpace(String str) {
+        return str.replaceAll("\\s", "");
+    }
+
+    /**
+     * Convert {@link String} to int.
+     *
+     * @param str {@link String} input string
+     * @return int
+     */
     private int convertToInt(String str) {
         return Integer.parseInt(str);
     }
 
+    /**
+     * Convert {@link String} to double.
+     *
+     * @param str {@link String} input string
+     * @return double
+     */
     private double convertToDouble(String str) {
         return Double.parseDouble(str);
     }
 
+    /**
+     * Convert {@link String} to float.
+     *
+     * @param str {@link String} input string
+     * @return float
+     */
     private float convertToFloat(String str) {
         return Float.parseFloat(str);
     }
 
+    /**
+     * Convert {@link String} to long.
+     *
+     * @param str {@link String} input string
+     * @return long
+     */
     private long convertToLong(String str) {
         return Long.parseLong(str);
     }

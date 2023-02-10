@@ -16,6 +16,7 @@ public class App {
         String digitString = "1234567898712";
         String digitString2 = "123245hg12334";
         String sentence = "My mother told me someday I will buy galleys with good oars, sail to distant shores.";
+        String sentence2 = " M y mother told me someday I will buy galleys with good oars, sail to distant shores . ";
 
         int duplicateCharactersInGreeting = stringNumberMath.countDuplicateCharacters(greeting);
         int duplicateCharactersInRandom = stringNumberMath.countDuplicateCharacters(random);
@@ -55,5 +56,7 @@ public class App {
         float convertedFloat2 = (float) stringNumberMath.convertStringToNumericalValue("3.45", "float");
         float convertedFloatsSum = convertedFloat1 + convertedFloat2;
         System.out.printf("%.2f + %.2f = %.2f%n", convertedFloat1, convertedFloat2, convertedFloatsSum);
+        System.out.println(stringNumberMath.removeWhiteSpace(sentence));
+        System.out.println(stringNumberMath.removeWhiteSpace(sentence2));
     }
 }
