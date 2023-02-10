@@ -7,6 +7,11 @@ import java.util.*;
 
 public class StringNumberMath {
 
+    private static final String L = "long";
+    private static final String I = "int";
+    private static final String D = "double";
+    private static final String F = "float";
+
     public StringNumberMath() {}
 
     /**
@@ -193,5 +198,71 @@ public class StringNumberMath {
      */
     public int countCharacterV2(String str, char c) {
         return str.length() - str.replace(String.valueOf(c), "").length();
+    }
+
+    /**
+     * Write a program that converts the given string to a int, long, float or double.
+     *
+     * @param str numerical string
+     * @param numericalType conversion type
+     *
+     * @return {@link Object}
+     *
+     * @throws IOException for invalid conversion type parameter
+     */
+    public Object convertStringToNumericalValue(String str, String numericalType) throws IOException {
+        if (!(numericalType.equals(L) || numericalType.equals(I) || numericalType.equals(F) || numericalType.equals(D))) {
+            throw new IOException("Invalid numerical type, possible types for conversion are long, float, int, double");
+        }
+
+        int i = 0;
+        float f = 0;
+        long l = 0;
+        double d = 0;
+
+        switch (numericalType) {
+            case "int" :
+                i = convertToInt(str);
+                break;
+
+            case "float" :
+                f = convertToFloat(str);
+                break;
+
+            case "long" :
+                l = convertToLong(str);
+                break;
+
+            default:
+               d = convertToDouble(str);
+                break;
+        }
+
+        switch (numericalType) {
+            case I:
+                return i;
+            case D:
+                return d;
+            case F:
+                return f;
+            default:
+                return l;
+        }
+    }
+
+    private int convertToInt(String str) {
+        return Integer.parseInt(str);
+    }
+
+    private double convertToDouble(String str) {
+        return Double.parseDouble(str);
+    }
+
+    private float convertToFloat(String str) {
+        return Float.parseFloat(str);
+    }
+
+    private long convertToLong(String str) {
+        return Long.parseLong(str);
     }
 }

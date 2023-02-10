@@ -1,5 +1,6 @@
 package org.revamp;
 
+import java.awt.font.NumericShaper;
 import java.io.IOException;
 import java.util.Map;
 
@@ -38,5 +39,21 @@ public class App {
         int characterCount1 = stringNumberMath.countCharacter(sentence, 'a');
         int characterCount2 = stringNumberMath.countCharacterV2(sentence, 'a');
         System.out.printf("character count for '%s' = %d, (v2 = %d)%n", sentence, characterCount1, characterCount2);
+
+        int convertedInt = (int) stringNumberMath.convertStringToNumericalValue("123", "int");
+        System.out.println(convertedInt);
+
+        // check exception
+        try {
+            float convertedFloat = (float) stringNumberMath.convertStringToNumericalValue("1.23", "f");
+            System.out.println(convertedFloat);
+        } catch (IOException e) {
+            System.out.println("catching forced number exception: " + e.getMessage());
+        }
+
+        float convertedFloat1 = (float) stringNumberMath.convertStringToNumericalValue("1.23", "float");
+        float convertedFloat2 = (float) stringNumberMath.convertStringToNumericalValue("3.45", "float");
+        float convertedFloatsSum = convertedFloat1 + convertedFloat2;
+        System.out.printf("%.2f + %.2f = %.2f%n", convertedFloat1, convertedFloat2, convertedFloatsSum);
     }
 }
