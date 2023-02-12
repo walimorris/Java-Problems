@@ -9,6 +9,7 @@ public class App {
         StringNumberMath stringNumberMath = new StringNumberMath();
 
         String greeting = "hello world";
+        String[] strArray = {"hello", "world", "it's", "me"};
         String repeating = "ggggggt";
         String random = "ee";
         String single = "e";
@@ -58,5 +59,6 @@ public class App {
         System.out.printf("%.2f + %.2f = %.2f%n", convertedFloat1, convertedFloat2, convertedFloatsSum);
         System.out.println(stringNumberMath.removeWhiteSpace(sentence));
         System.out.println(stringNumberMath.removeWhiteSpace(sentence2));
+        System.out.println(stringNumberMath.appendStringsByDelimiter('-', strArray));
     }
 }

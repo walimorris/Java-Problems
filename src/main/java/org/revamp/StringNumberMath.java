@@ -1,7 +1,5 @@
 package org.revamp;
 
-import jdk.internal.util.xml.impl.Pair;
-
 import java.io.IOException;
 import java.util.*;
 
@@ -259,6 +257,22 @@ public class StringNumberMath {
      */
     public String removeWhiteSpace(String str) {
         return str.replaceAll("\\s", "");
+    }
+
+    /**
+     * Write a program that joins the given strings by the given delimiter.
+     *
+     * @param delimiter char
+     * @param args strings
+     *
+     * @return {@link String}
+     */
+    public String appendStringsByDelimiter(char delimiter, String...args) {
+        StringBuilder result = new StringBuilder();
+        for (String str : args) {
+            result.append(str).append(delimiter);
+        }
+        return result.substring(0, result.length() - 1);
     }
 
     /**
