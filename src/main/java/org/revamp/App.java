@@ -8,6 +8,20 @@ public class App {
     public static void main( String[] args ) throws IOException {
         StringNumberMath stringNumberMath = new StringNumberMath();
 
+        // palindrome
+        String p1 = "kayak";
+        String p2 = "deified";
+        String p3 = "rotator";
+        String p4 = "deed";
+        String[] palindromes = {p1, p2, p3, p4};
+
+        // non palindromes
+        String np1 = "sippy";
+        String np2 = "brother";
+        String np3 = "green";
+        String np4 = "caves";
+        String[] nonPalindromes = {np1, np2, np3, np4};
+
         String greeting = "hello world";
         String[] strArray = {"hello", "world", "it's", "me"};
         String repeating = "ggggggt";
@@ -60,5 +74,15 @@ public class App {
         System.out.println(stringNumberMath.removeWhiteSpace(sentence));
         System.out.println(stringNumberMath.removeWhiteSpace(sentence2));
         System.out.println(stringNumberMath.appendStringsByDelimiter('-', strArray));
+
+        System.out.println("Printing palindromes");
+        for (String possiblePalindrome : palindromes) {
+            System.out.println(possiblePalindrome + " is palindrome = " + stringNumberMath.isPalindrome(possiblePalindrome));
+        }
+        System.out.println("----------------------------------------------------------------------------");
+        System.out.println("\nPrinting non-palindromes");
+        for (String possibleNonPalindrome : nonPalindromes) {
+            System.out.println(possibleNonPalindrome + " is palindrome = " + stringNumberMath.isPalindrome(possibleNonPalindrome));
+        }
     }
 }

@@ -275,6 +275,21 @@ public class StringNumberMath {
         return result.substring(0, result.length() - 1);
     }
 
+    public boolean isPalindrome(String str) {
+        String possiblePalindrome = str.toLowerCase();
+        int front = 0;
+        int back = possiblePalindrome.length() - 1;
+
+        while (front <= back) {
+            if (!(possiblePalindrome.charAt(front) == possiblePalindrome.charAt(back))) {
+                return false;
+            }
+            front++;
+            back--;
+        }
+        return true;
+    }
+
     /**
      * Convert {@link String} to int.
      *
