@@ -280,7 +280,7 @@ public class StringNumberMath {
         int front = 0;
         int back = possiblePalindrome.length() - 1;
 
-        while (front <= back) {
+        while (front < back) {
             if (!(possiblePalindrome.charAt(front) == possiblePalindrome.charAt(back))) {
                 return false;
             }
