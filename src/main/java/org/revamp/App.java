@@ -84,5 +84,21 @@ public class App {
         for (String possibleNonPalindrome : nonPalindromes) {
             System.out.println(possibleNonPalindrome + " is palindrome = " + stringNumberMath.isPalindrome(possibleNonPalindrome));
         }
+
+        String nullString = null;
+        String notNullString = "hello there";
+        ObjectsImmutabilitySwitch objectsImmutabilitySwitch = new ObjectsImmutabilitySwitch();
+        System.out.printf("'%s' is not null: %s%n", notNullString, objectsImmutabilitySwitch.isNotNull(notNullString));
+
+        // expected null pointer exception
+//        boolean isNotNullObject = objectsImmutabilitySwitch.isNotNull(nullString);
+
+        Object[] a = {"james", "mike", "abby"};
+        Object[] b = {"james", "mike", "abby"};
+        Object[] c = {"ashley", "frank"};
+        Object[] d = null;
+
+        ArraysCollectionsDataStructures arraysCollectionsDataStructures = new ArraysCollectionsDataStructures();
+        System.out.println(arraysCollectionsDataStructures.areEqualArrays(a, d));
     }
 }
