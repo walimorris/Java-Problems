@@ -291,6 +291,36 @@ public class StringNumberMath {
     }
 
     /**
+     * Write a program that removes the duplicate characters from the given string.
+     *
+     * @param str {@link String}
+     * @return {@link String}
+     */
+    public String removeDuplicateCharacters(String str) {
+        StringBuilder result = new StringBuilder();
+        Set<Character> charset = new HashSet<>();
+
+        for (char c : str.toCharArray()) {
+            if (charset.add(c)) {
+                result.append(c);
+            }
+        }
+        return result.toString();
+    }
+
+    /**
+     * Write a program that removes the given character from the given String.
+     *
+     * @param str {@link String}
+     * @param ch char
+     *
+     * @return {@link String}
+     */
+    public String removeGivenCharacter(String str, char ch) {
+        return str.replace(String.valueOf(ch), "");
+    }
+
+    /**
      * Convert {@link String} to int.
      *
      * @param str {@link String} input string

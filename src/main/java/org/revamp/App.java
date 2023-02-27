@@ -100,5 +100,16 @@ public class App {
 
         ArraysCollectionsDataStructures arraysCollectionsDataStructures = new ArraysCollectionsDataStructures();
         System.out.println(arraysCollectionsDataStructures.areEqualArrays(a, d));
+
+        // duplicated strings
+        String dup1 = "hhelloo";
+        String dup2 = "ssysttemm";
+        System.out.println(stringNumberMath.removeDuplicateCharacters(dup1));
+        System.out.println(stringNumberMath.removeDuplicateCharacters(dup2));
+
+        String removeStr1 = "hello";
+        String removeStr2 = "world";
+        System.out.println(stringNumberMath.removeGivenCharacter(removeStr1, 'l'));
+        System.out.println(stringNumberMath.removeGivenCharacter(removeStr2, 'r'));
     }
 }
